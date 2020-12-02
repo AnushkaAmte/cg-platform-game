@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="TITLE" type="Label"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -49.5
+margin_top = 139.431
+margin_right = 49.5
+margin_bottom = 153.431
+text = "GAME"
+__meta__ = {
+"_edit_use_anchors_": false
+}

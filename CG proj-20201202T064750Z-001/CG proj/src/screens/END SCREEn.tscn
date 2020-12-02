@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/screens/END SCREEn.gd" type="Script" id=1]
+[ext_resource path="res://start-assets/background.png" type="Texture" id=2]
+[ext_resource path="res://src/user interface/TITLE.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/user interface/changesceenbutton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/user interface/QUIT.tscn" type="PackedScene" id=5]
+
+[node name="END SCREEn" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 398.0
+margin_top = 174.5
+margin_right = 623.0
+margin_bottom = 205.5
+text = "YOUR FINAL SCORE IS %s
+YOU DIED TIMES %s"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TITLE" parent="." instance=ExtResource( 3 )]
+margin_left = -114.5
+margin_top = 148.0
+margin_right = 106.5
+margin_bottom = 162.0
+text = "CONGO YOU FINISHED THE GAME!"
+
+[node name="menu" type="VBoxContainer" parent="TITLE"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -117.0
+margin_top = 59.5
+margin_right = 108.0
+margin_bottom = 299.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PLAY" parent="TITLE/menu" instance=ExtResource( 4 )]
+text = "PLAY AGAIN"
+next_scene_path = "res://src/screens/MAIN SCREEEn.tscn"
+
+[node name="QUIT" parent="TITLE/menu" instance=ExtResource( 5 )]
+margin_top = 122.0
+margin_bottom = 240.0

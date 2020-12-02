@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/user interface/TITLE.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/user interface/changesceenbutton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/user interface/QUIT.tscn" type="PackedScene" id=3]
+[ext_resource path="res://start-assets/background.png" type="Texture" id=4]
+
+[node name="MAIN SCREEEn" type="Control"]
+margin_right = 597.0
+margin_bottom = 527.0
+rect_scale = Vector2( 1.73221, 1.14613 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TITLE" parent="." instance=ExtResource( 1 )]
+
+[node name="menu" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -114.5
+margin_top = -93.5
+margin_right = 110.5
+margin_bottom = 146.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PLAY" parent="menu" instance=ExtResource( 2 )]
+next_scene_path = "res://src/Levels/LevelTemplate.tscn"
+
+[node name="QUIT" parent="menu" instance=ExtResource( 3 )]
+margin_top = 122.0
+margin_bottom = 240.0

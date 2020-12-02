@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/user interface/TITLE.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/user interface/changesceenbutton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/user interface/QUIT.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/user interface/RETRY.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/user interface/user interface.gd" type="Script" id=5]
+
+[node name="user interface" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 4.0
+margin_bottom = -2.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -121.761
+margin_top = 52.8224
+margin_right = -53.7609
+margin_bottom = 66.8224
+rect_scale = Vector2( 0.876519, 1 )
+text = "SCORE: %S"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PAUSEOVERLAY" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.00012207
+margin_top = 2.66969
+margin_right = -0.00012207
+margin_bottom = 2.66968
+color = Color( 0, 0, 0, 0.235294 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TITLE" parent="PAUSEOVERLAY" instance=ExtResource( 1 )]
+text = "PAUSED"
+align = 1
+
+[node name="pauseMenu" type="VBoxContainer" parent="PAUSEOVERLAY"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -124.0
+margin_top = -104.5
+margin_right = 124.0
+margin_bottom = 104.5
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="changescenebutton" parent="PAUSEOVERLAY/pauseMenu" instance=ExtResource( 2 )]
+margin_right = 248.0
+margin_bottom = 67.0
+text = "MAIN SCREEN"
+next_scene_path = "res://src/screens/MAIN SCREEEn.tscn"
+
+[node name="retrybutton" parent="PAUSEOVERLAY/pauseMenu" instance=ExtResource( 4 )]
+margin_top = 71.0
+margin_right = 248.0
+margin_bottom = 138.0
+
+[node name="QUIT" parent="PAUSEOVERLAY/pauseMenu" instance=ExtResource( 3 )]
+margin_top = 142.0
+margin_right = 248.0
+margin_bottom = 209.0
